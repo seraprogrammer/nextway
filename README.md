@@ -1,4 +1,4 @@
-# Component Class: A Simple JavaScript Component System
+# A Simple HTML Component System
 
 ## Overview
 The **Component Class** provides a lightweight and reusable JavaScript component system. It enables defining and rendering components using HTML templates with placeholders for properties.
