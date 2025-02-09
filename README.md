@@ -1,4 +1,4 @@
-**# 🚀 HTML Component System
+# 🚀 HTML Component System
 
 A lightweight and simple **HTML-based Component System** that allows you to define and reuse components using `<template>` tags directly inside your HTML. No frameworks or complex setups required!
 
