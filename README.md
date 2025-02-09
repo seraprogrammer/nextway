@@ -18,7 +18,7 @@ A lightweight and simple **HTML-based Component System** that allows you to defi
 Include the script file in your project:
 
 ```html
-<script src="./core/core.js"></script>
+<script src="//unpkg.com/nextway"></script>
 ```
 
 ### 2️⃣ Define Components using `<template>`
