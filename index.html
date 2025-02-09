@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component System Demo</title>
+    <!-- Load the component system -->
+    <script src="./core/core.js"></script>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Styled button */
+        .custom-button {
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .custom-button:hover {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            transform: scale(1.05);
+        }
+
+        /* Styled card */
+        .custom-card {
+            background: linear-gradient(135deg, #3b82f6, #1e293b);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .custom-card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-content {
+            font-size: 1rem;
+        }
+
+        /* Grid container for cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        @media (max-width: 1024px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cards-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* Badge Component */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            background: #ef4444;
+            border-radius: 12px;
+        }
+
+        /* Alert Component */
+        .alert {
+            background-color: #fbbf24;
+            color: black;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        /* Avatar Component */
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        .avatar-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .avatar-name {
+            font-size: 1.2rem;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⚡ Component System Demo</h1>
+
+    <!-- Define Button Component -->
+    <template name="mybutton" props="text">
+        <button class="custom-button">{text}</button>
+    </template>
+
+    <mybutton text="Click Me!"></mybutton>
+
+    <!-- Card Components -->
+    <div class="cards-container">
+        <template name="mycard" props="title, content">
+            <div class="custom-card">
+                <h2 class="card-title">{title}</h2>
+                <p class="card-content">{content}</p>
+            </div>
+        </template>
+
+        <mycard title="Awesome Card" content="This is a stylish card component."></mycard>
+        <mycard title="Cool Design" content="Hover over me to see the effect!"></mycard>
+        <mycard title="Dark Mode Ready" content="Perfect for modern UI designs."></mycard>
+        <mycard title="Easy to Customize" content="Just edit the template and props."></mycard>
+    </div>
+
+    <!-- Badge Component -->
+    <template name="badge" props="text">
+        <span class="badge">{text}</span>
+    </template>
+
+    <div>
+        <p>Status: <badge text="Active"></badge>
+        </p>
+        <p>New Feature: <badge text="Beta"></badge>
+        </p>
+    </div>
+
+    <!-- Alert Component -->
+    <template name="alert" props="message">
+        <div class="alert">{message}</div>
+    </template>
+
+    <alert message="⚠️ Warning! This is a custom alert message."></alert>
+
+    <!-- Avatar Component -->
+    <template name="avatar" props="src, name">
+        <div class="avatar-container">
+            <img class="avatar" src="{src}" alt="{name}">
+            <p class="avatar-name">{name}</p>
+        </div>
+    </template>
+
+    <avatar src="https://i.pravatar.cc/80" name="John Doe"></avatar>
+
+</body>
+
+</html>
