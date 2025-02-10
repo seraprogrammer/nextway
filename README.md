@@ -93,4 +93,4 @@ Just add this one line. That's it. Really!
 Free and open source. Build something awesome!
 
 ---
-Built with ⚡️ by developers, for developers
+Built with ⚡️ by Nazmul Hossain, for developers
